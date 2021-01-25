@@ -4,17 +4,12 @@
  * @version 1.0
  */
 
-public class SodaCan{
-	/**
-	 * This method calculates the surface area of a can.
-	 * @param radius Radius of the can in mm.
-	 * @param height Height of the can in mm.
-	 * @return Returns surface area as a double.
-	 */
-	public double getSurfaceArea(double radius, double height) {
-		double sa=2 * Math.PI * radius * (height + radius);
-	     return sa;
-	};
+interface measurable{
+	double getSurfaceArea(double radius, double height);
+}
+
+public class SodaCan implements measurable{
+
 	/**
 	 * This method calculates the volume area of a can.
 	 * @param radius Radius of the can in mm.
@@ -24,5 +19,16 @@ public class SodaCan{
 	public double getVolume(double radius, double height) {
 		double volume=(Math.PI * height * radius * radius);
 		return volume;
+	}
+	@Override
+	/**
+	 * This method calculates the surface area of a can.
+	 * @param radius Radius of the can in mm.
+	 * @param height Height of the can in mm.
+	 * @return Returns surface area as a double.
+	 */
+	public double getSurfaceArea(double radius, double height) {
+		double sa=2 * Math.PI * radius * (height + radius);
+	     return sa;
 	};
 }
